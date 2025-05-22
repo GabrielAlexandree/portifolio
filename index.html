@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <title>Jogue Doom no Navegador</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0; height: 100%; overflow: hidden;
+      background: black;
+    }
+    #doomCanvas {
+      display: block;
+      margin: 0 auto;
+      background: black;
+    }
+  </style>
 </head>
 <body>
-    hello world2
+  <canvas id="doomCanvas" width="640" height="400"></canvas>
+
+  <script src="https://cdn.rawgit.com/fabiensanglard/jsdoom/master/doom.js"></script>
+  <script>
+    // Configuração do Doom
+    var canvas = document.getElementById('doomCanvas');
+
+    // Inicializa o Doom
+    Doom.main({
+      canvas: canvas,
+      // Wad do Doom original carregado via URL pública
+      wadUrl: 'https://fabiensanglard.net/doom/doom1.wad',
+      // Pode colocar configurações extras aqui
+      fullscreen: false,
+    });
+  </script>
 </body>
 </html>
