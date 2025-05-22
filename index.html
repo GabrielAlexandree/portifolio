@@ -65,6 +65,13 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+
+        /* Oculta o elemento scroll-down em dispositivos móveis */
+        @media (max-width: 768px) {
+            .scroll-down {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -243,6 +250,16 @@
             
             typeWriter();
         });
+
+        // Previne scroll automático em dispositivos móveis
+        if (window.innerWidth <= 768) {
+            // Impede qualquer scroll automático que possa estar ocorrendo
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    window.scrollTo(0, 0);
+                }, 100);
+            });
+        }
     </script>
 </body>
 </html>
