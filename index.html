@@ -44,12 +44,33 @@
             background-color: #555;
             transform: translateY(-3px);
         }
+        
+        /* Estilo para o efeito de terminal */
+        .terminal-text {
+            display: inline-block;
+            position: relative;
+            color: #fff;
+            font-weight: 700;
+        }
+        
+        .terminal-text::after {
+            content: '|';
+            position: absolute;
+            right: -8px;
+            color: #fff;
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>Gabriel Alexandre</h1>
+            <h1><span id="terminal-name" class="terminal-text"></span></h1>
             <p class="subtitle">Desenvolvedor Web & Mobile</p>
         </div>
         <div class="scroll-down">Rolar para baixo</div>
@@ -188,6 +209,39 @@
                 top: 0,
                 behavior: "smooth"
             });
+        });
+        
+        // Efeito de digitação de terminal
+        document.addEventListener("DOMContentLoaded", function() {
+            const text = "Gabriel Alexandre";
+            const terminalName = document.getElementById("terminal-name");
+            let i = 0;
+            
+            function typeWriter() {
+                if (i < text.length) {
+                    terminalName.innerHTML += text.charAt(i);
+                    i++;
+                    
+                    // Variação de velocidade para efeito mais natural
+                    const normalSpeed = 100; // Velocidade base da digitação
+                    const variationFactor = 80; // Variação da velocidade
+                    
+                    // Gera tempo aleatório entre caracteres
+                    let typeSpeed = normalSpeed;
+                    
+                    // Adiciona uma pausa maior em espaços
+                    if (text.charAt(i-1) === " ") {
+                        typeSpeed = normalSpeed + 150;
+                    } else {
+                        // Velocidade aleatória para cada caractere
+                        typeSpeed = normalSpeed + (Math.random() * variationFactor - variationFactor/2);
+                    }
+                    
+                    setTimeout(typeWriter, typeSpeed);
+                }
+            }
+            
+            typeWriter();
         });
     </script>
 </body>
