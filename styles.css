@@ -1,0 +1,353 @@
+/* Variáveis de cores */
+:root {
+    --color-dark-purple: #2A0A45;
+    --color-purple: #4A154B;
+    --color-light-purple: #7B337D;
+    --color-accent: #9C3BAC;
+    --color-text: #F8F7F9;
+    --color-text-dark: #D8D5E0;
+    --color-bg: #150726;
+    --color-bg-light: #1E0C33;
+    --color-card: #281040;
+    --transition: all 0.3s ease;
+}
+
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+/* Header */
+header {
+    background-color: var(--color-dark-purple);
+    padding: 100px 0 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at 50% 50%, var(--color-purple), transparent 70%);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, var(--color-text), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+header .subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-dark);
+}
+
+/* Navegação */
+nav {
+    background-color: var(--color-bg-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    display: block;
+    padding: 20px 0;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--color-accent);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    bottom: 15px;
+    left: 0;
+    transition: var(--transition);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Seções */
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: var(--color-accent);
+    bottom: -10px;
+    left: 25%;
+}
+
+/* Seção Sobre */
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+/* Seção Projetos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--color-card);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+    height: 180px;
+    background-color: var(--color-purple);
+    position: relative;
+}
+
+.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-dark);
+    font-size: 0.8rem;
+}
+
+.placeholder::after {
+    content: 'Imagem do projeto';
+}
+
+.project-card h3 {
+    padding: 15px 20px 5px;
+    font-size: 1.2rem;
+}
+
+.project-card p {
+    padding: 0 20px 15px;
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+}
+
+.project-links {
+    display: flex;
+    padding: 0 20px 20px;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 15px;
+    background-color: var(--color-purple);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--color-light-purple);
+}
+
+/* Seção Habilidades */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skill {
+    background-color: var(--color-card);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.skill:hover {
+    border-color: var(--color-accent);
+    transform: scale(1.05);
+}
+
+/* Seção Contato */
+.contact-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--color-card);
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    background-color: var(--color-purple);
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-bg-light);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .nav ul {
+        justify-content: space-between;
+    }
+    
+    .nav li {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .nav a {
+        padding: 15px 0;
+        font-size: 0.9rem;
+    }
+    
+    .section h2 {
+        font-size: 1.8rem;
+    }
+} 

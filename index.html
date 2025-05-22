@@ -1,11 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    hello world
+    <header>
+        <div class="container">
+            <h1>Meu Nome</h1>
+            <p class="subtitle">Desenvolvedor Web</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="sobre" class="container section">
+            <h2>Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Olá! Sou um desenvolvedor web apaixonado por criar experiências digitais elegantes e funcionais. Minha abordagem combina design minimalista com código eficiente para desenvolver soluções que atendam às necessidades dos clientes.</p>
+                    <p>Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades para oferecer os melhores resultados.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="container section">
+            <h2>Projetos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image placeholder"></div>
+                    <h3>Projeto 1</h3>
+                    <p>Descrição breve do projeto. Tecnologias utilizadas e principais funcionalidades.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn">Ver Projeto</a>
+                        <a href="#" class="btn">Código</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image placeholder"></div>
+                    <h3>Projeto 2</h3>
+                    <p>Descrição breve do projeto. Tecnologias utilizadas e principais funcionalidades.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn">Ver Projeto</a>
+                        <a href="#" class="btn">Código</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image placeholder"></div>
+                    <h3>Projeto 3</h3>
+                    <p>Descrição breve do projeto. Tecnologias utilizadas e principais funcionalidades.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn">Ver Projeto</a>
+                        <a href="#" class="btn">Código</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="container section">
+            <h2>Habilidades</h2>
+            <div class="skills-container">
+                <div class="skill">HTML5</div>
+                <div class="skill">CSS3</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">React</div>
+                <div class="skill">Node.js</div>
+                <div class="skill">Git</div>
+                <div class="skill">Responsive Design</div>
+                <div class="skill">UI/UX</div>
+            </div>
+        </section>
+
+        <section id="contato" class="container section">
+            <h2>Contato</h2>
+            <div class="contact-container">
+                <p>Interessado em trabalhar juntos? Entre em contato:</p>
+                <div class="contact-links">
+                    <a href="mailto:seu-email@exemplo.com" class="contact-item">seu-email@exemplo.com</a>
+                    <a href="https://linkedin.com/in/seu-perfil" class="contact-item">LinkedIn</a>
+                    <a href="https://github.com/seu-usuario" class="contact-item">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Meu Portfólio. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
