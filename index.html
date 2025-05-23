@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,15 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .contact-item i {
             margin-right: 10px;
             font-size: 1.2em;
         }
-        
+
         .scroll-to-top {
             position: fixed;
             bottom: 30px;
@@ -32,19 +34,19 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
-        
+
         .scroll-to-top.show {
             opacity: 1;
             visibility: visible;
         }
-        
+
         .scroll-to-top:hover {
             background-color: #555;
             transform: translateY(-3px);
         }
-        
+
         /* Estilo para o efeito de terminal */
         .terminal-text {
             display: inline-block;
@@ -52,7 +54,7 @@
             color: #fff;
             font-weight: 700;
         }
-        
+
         .terminal-text::after {
             content: '|';
             position: absolute;
@@ -60,10 +62,17 @@
             color: #fff;
             animation: blink 1s step-end infinite;
         }
-        
+
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
 
         /* Oculta o elemento scroll-down em dispositivos móveis */
@@ -74,6 +83,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="header-content">
@@ -100,8 +110,12 @@
             <h2>Sobre Mim</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Olá! Sou um <span class="highlight">desenvolvedor web</span> apaixonado por criar experiências digitais elegantes e funcionais. Minha abordagem combina design minimalista com código eficiente para desenvolver soluções que atendam às necessidades dos clientes.</p>
-                    <p>Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades para oferecer os melhores resultados. Tenho experiência em desenvolvimento front-end, back-end e UI/UX design.</p>
+                    <p>Olá! Sou um <span class="highlight">desenvolvedor web</span> apaixonado por criar experiências
+                        digitais elegantes e funcionais. Minha abordagem combina design minimalista com código eficiente
+                        para desenvolver soluções que atendam às necessidades dos clientes.</p>
+                    <p>Estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades para oferecer os
+                        melhores resultados. Tenho experiência em desenvolvimento front-end, back-end e UI/UX design.
+                    </p>
                 </div>
                 <div class="about-image">
                     <!-- <img src="https://via.placeholder.com/400x300" alt="Minha foto"> -->
@@ -145,7 +159,7 @@
         <section id="habilidades" class="container section">
             <h2>Habilidades</h2>
             <div class="skills-container">
-                
+
                 <div class="skill"><span>TypeScript</span></div>
                 <div class="skill"><span>Java</span></div>
                 <div class="skill"><span>Google Analytics</span></div>
@@ -168,9 +182,12 @@
                     <p class="contact-text">Entre em contato comigo através de um dos canais abaixo:</p>
                 </div>
                 <div class="contact-links">
-                    <a href="mailto:dev.gabrielalexandre@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> Email</a>
-                    <a href="https://www.linkedin.com/in/gabrielalexandre-dev/" class="contact-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/GabrielAlexandree" class="contact-item"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="mailto:dev.gabrielalexandre@gmail.com" class="contact-item"><i class="fas fa-envelope"></i>
+                        Email</a>
+                    <a href="https://www.linkedin.com/in/gabrielalexandre-dev/" class="contact-item"><i
+                            class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/GabrielAlexandree" class="contact-item"><i class="fab fa-github"></i>
+                        GitHub</a>
                 </div>
             </div>
         </section>
@@ -192,7 +209,7 @@
             </div>
         </div>
     </footer>
-    
+
     <div class="scroll-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
@@ -200,7 +217,7 @@
     <script>
         // Botão voltar ao topo
         const scrollToTopBtn = document.querySelector(".scroll-to-top");
-        
+
         window.addEventListener("scroll", () => {
             if (window.pageYOffset > 300) {
                 scrollToTopBtn.classList.add("show");
@@ -208,56 +225,66 @@
                 scrollToTopBtn.classList.remove("show");
             }
         });
-        
+
         scrollToTopBtn.addEventListener("click", () => {
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             });
         });
-        
+
         // Efeito de digitação de terminal
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const text = "Gabriel Alexandre";
             const terminalName = document.getElementById("terminal-name");
             let i = 0;
-            
+
             function typeWriter() {
                 if (i < text.length) {
                     terminalName.innerHTML += text.charAt(i);
                     i++;
-                    
+
                     // Variação de velocidade para efeito mais natural
                     const normalSpeed = 100; // Velocidade base da digitação
                     const variationFactor = 80; // Variação da velocidade
-                    
+
                     // Gera tempo aleatório entre caracteres
                     let typeSpeed = normalSpeed;
-                    
+
                     // Adiciona uma pausa maior em espaços
-                    if (text.charAt(i-1) === " ") {
+                    if (text.charAt(i - 1) === " ") {
                         typeSpeed = normalSpeed + 150;
                     } else {
                         // Velocidade aleatória para cada caractere
-                        typeSpeed = normalSpeed + (Math.random() * variationFactor - variationFactor/2);
+                        typeSpeed = normalSpeed + (Math.random() * variationFactor - variationFactor / 2);
                     }
-                    
+
                     setTimeout(typeWriter, typeSpeed);
                 }
             }
-            
+
             typeWriter();
         });
 
         // Previne scroll automático em dispositivos móveis
         if (window.innerWidth <= 768) {
             // Impede qualquer scroll automático que possa estar ocorrendo
-            window.addEventListener('load', function() {
-                setTimeout(function() {
+            window.addEventListener('load', function () {
+                setTimeout(function () {
                     window.scrollTo(0, 0);
                 }, 100);
             });
         }
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C7BM2GNCLC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-C7BM2GNCLC');
+    </script>
 </body>
+
 </html>
