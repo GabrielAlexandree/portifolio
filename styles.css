@@ -349,6 +349,7 @@ nav a:hover::after {
     color: var(--color-text-muted);
     font-size: 0.9rem;
     position: relative;
+    height: max-content;
     background-image: linear-gradient(45deg, var(--color-bg-alt) 25%, var(--color-card) 25%, var(--color-card) 50%, var(--color-bg-alt) 50%, var(--color-bg-alt) 75%, var(--color-card) 75%, var(--color-card) 100%);
     background-size: 20px 20px;
     opacity: 0.3;
