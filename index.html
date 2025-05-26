@@ -75,6 +75,16 @@
             }
         }
 
+        /* Estilo para a imagem de perfil */
+        .about-image img {
+            mix-blend-mode: luminosity;
+            opacity: 0.9;
+            filter: contrast(1.1) brightness(1.05);
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
         /* Oculta o elemento scroll-down em dispositivos móveis */
         @media (max-width: 768px) {
             .scroll-down {
@@ -118,7 +128,7 @@
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="assets/perfil.jpeg" alt="Minha foto">
+                    <img src="assets/perfil.png" alt="Minha foto">
                 </div>
             </div>
         </section>
