@@ -12,6 +12,51 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Estilo padrão para botões */
+        .btn-style {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--color-card);
+            color: var(--color-text);
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid var(--color-border);
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-style::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 0;
+        }
+
+        .btn-style span, .btn-style i, .btn-style {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-style:hover {
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
+        }
+
+        .btn-style:hover::before {
+            opacity: 1;
+        }
+
         .contact-item i {
             margin-right: 10px;
             font-size: 1.2em;
@@ -63,17 +108,6 @@
             animation: blink 1s step-end infinite;
         }
 
-        @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0;
-            }
-        }
 
         /* Estilo para a imagem de perfil */
         .about-image img {
@@ -83,13 +117,6 @@
             transition: all 0.3s ease;
             border-radius: 5px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Oculta o elemento scroll-down em dispositivos móveis */
-        @media (max-width: 768px) {
-            .scroll-down {
-                display: none;
-            }
         }
     </style>
 </head>
@@ -141,46 +168,45 @@
                     <h3>Projeto 1</h3>
                     <p>Descrição breve do projeto.</p>
                     <div class="project-links">
-                        <a href="#" class="btn">Ver Demo</a>
-                        <a href="#" class="btn">Ver Código</a>
-                    </div>
-                </div>
-                <!-- <div class="project-card">
-                    <div class="project-image placeholder"></div>
-                    <h3>Projeto 2</h3>
-                    <p>Descrição breve do projeto. Tecnologias utilizadas e principais funcionalidades. Esta aplicação foi desenvolvida com foco na experiência do usuário.</p>
-                    <div class="project-links">
-                        <a href="#" class="btn">Ver Demo</a>
-                        <a href="#" class="btn">Ver Código</a>
+                        <a href="#" class="btn-style"><span>Ver Demo</span></a>
+                        <a href="#" class="btn-style"><span>Ver Código</span></a>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-image placeholder"></div>
-                    <h3>Projeto 3</h3>
-                    <p>Descrição breve do projeto. Tecnologias utilizadas e principais funcionalidades. Esta aplicação foi desenvolvida com foco na experiência do usuário.</p>
+                    <h3>Projeto 1</h3>
+                    <p>Descrição breve do projeto.</p>
                     <div class="project-links">
-                        <a href="#" class="btn">Ver Demo</a>
-                        <a href="#" class="btn">Ver Código</a>
+                        <a href="#" class="btn-style"><span>Ver Demo</span></a>
+                        <a href="#" class="btn-style"><span>Ver Código</span></a>
                     </div>
-                </div> -->
+                </div>
+                <div class="project-card">
+                    <div class="project-image placeholder"></div>
+                    <h3>Projeto 1</h3>
+                    <p>Descrição breve do projeto.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn-style"><span>Ver Demo</span></a>
+                        <a href="#" class="btn-style"><span>Ver Código</span></a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="habilidades" class="container section">
             <h2>Habilidades</h2>
             <div class="skills-container">
-
-                <div class="skill"><span>TypeScript</span></div>
-                <div class="skill"><span>Java</span></div>
-                <div class="skill"><span>Google Analytics</span></div>
-                <div class="skill"><span>Banco de dados</span></div>
-                <div class="skill"><span>Dart</span></div>
-                <div class="skill"><span>Flutter</span></div>
-                <div class="skill"><span>Spring Framework</span></div>
-                <div class="skill"><span>Linux</span></div>
-                <div class="skill"><span>PostgreSQL</span></div>
-                <div class="skill"><span>Angular (Framework)</span></div>
-                <div class="skill"><span>CSS</span></div>
+                <div class="skill btn-style"><span>TypeScript</span></div>
+                <div class="skill btn-style"><span>Java</span></div>
+                <div class="skill btn-style"><span>Google Analytics</span></div>
+                <div class="skill btn-style"><span>Banco de dados</span></div>
+                <div class="skill btn-style"><span>Dart</span></div>
+                <div class="skill btn-style"><span>Flutter</span></div>
+                <div class="skill btn-style"><span>Spring Framework</span></div>
+                <div class="skill btn-style"><span>Linux</span></div>
+                <div class="skill btn-style"><span>PostgreSQL</span></div>
+                <div class="skill btn-style"><span>Angular (Framework)</span></div>
+                <div class="skill btn-style"><span>CSS</span></div>
             </div>
         </section>
 
@@ -192,12 +218,12 @@
                     <p class="contact-text">Entre em contato comigo através de um dos canais abaixo:</p>
                 </div>
                 <div class="contact-links">
-                    <a href="mailto:dev.gabrielalexandre@gmail.com" class="contact-item"><i class="fas fa-envelope"></i>
-                        Email</a>
-                    <a href="https://www.linkedin.com/in/gabrielalexandre-dev/" class="contact-item"><i
-                            class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/GabrielAlexandree" class="contact-item"><i class="fab fa-github"></i>
-                        GitHub</a>
+                    <a href="mailto:dev.gabrielalexandre@gmail.com" class="btn-style contact-item"><i class="fas fa-envelope"></i>
+                        <span>Email</span></a>
+                    <a href="https://www.linkedin.com/in/gabrielalexandre-dev/" class="btn-style contact-item"><i
+                            class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
+                    <a href="https://github.com/GabrielAlexandree" class="btn-style contact-item"><i class="fab fa-github"></i>
+                        <span>GitHub</span></a>
                 </div>
             </div>
         </section>
@@ -206,7 +232,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">MN</div>
+                <a href="#" class="logo">Portfólio</a>
                 <div class="footer-links">
                     <a href="#sobre">Sobre</a>
                     <a href="#projetos">Projetos</a>

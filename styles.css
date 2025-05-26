@@ -312,6 +312,9 @@ nav a:hover::after {
     color: var(--color-primary);
     font-weight: 500;
 }
+.highlight:hover{
+    color: white;
+}
 
 /* Seção Projetos */
 .projects-grid {
