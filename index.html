@@ -42,7 +42,9 @@
             z-index: 0;
         }
 
-        .btn-style span, .btn-style i, .btn-style {
+        .btn-style span,
+        .btn-style i,
+        .btn-style {
             position: relative;
             z-index: 1;
         }
@@ -218,11 +220,13 @@
                     <p class="contact-text">Entre em contato comigo através de um dos canais abaixo:</p>
                 </div>
                 <div class="contact-links">
-                    <a href="mailto:dev.gabrielalexandre@gmail.com" class="btn-style contact-item"><i class="fas fa-envelope"></i>
+                    <a href="mailto:dev.gabrielalexandre@gmail.com" class="btn-style contact-item"><i
+                            class="fas fa-envelope"></i>
                         <span>Email</span></a>
                     <a href="https://www.linkedin.com/in/gabrielalexandre-dev/" class="btn-style contact-item"><i
                             class="fab fa-linkedin"></i> <span>LinkedIn</span></a>
-                    <a href="https://github.com/GabrielAlexandree" class="btn-style contact-item"><i class="fab fa-github"></i>
+                    <a href="https://github.com/GabrielAlexandree" class="btn-style contact-item"><i
+                            class="fab fa-github"></i>
                         <span>GitHub</span></a>
                 </div>
             </div>
@@ -251,6 +255,36 @@
     </div>
 
     <script>
+        //scroll automatico lento
+        window.onload = function() {
+            let stopScrolling = false;
+
+            // Se o usuário interagir com rolagem, cancelar o scroll automático
+            const cancelScroll = () => { stopScrolling = true; };
+
+            window.addEventListener('wheel', cancelScroll, { passive: true });    // mouse
+            window.addEventListener('touchstart', cancelScroll, { passive: true }); // toque em tela
+            window.addEventListener('keydown', cancelScroll); // teclado (setas, PageDown, etc.)
+
+            const scrollInterval = 10; // intervalo em ms
+            const scrollStep = 5;      // pixels por passo
+
+            function slowScroll() {
+            if (stopScrolling) return;
+
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight;
+            const clientHeight = document.documentElement.clientHeight;
+
+            if (scrollTop + clientHeight < scrollHeight) {
+                window.scrollBy(0, scrollStep);
+                setTimeout(slowScroll, scrollInterval);
+            }
+            }
+
+            slowScroll();
+        };
+
         // Botão voltar ao topo
         const scrollToTopBtn = document.querySelector(".scroll-to-top");
 
